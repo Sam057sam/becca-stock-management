@@ -1,0 +1,3 @@
+ALTER TABLE quotes
+  ADD COLUMN IF NOT EXISTS signature_path VARCHAR(255) NULL AFTER total,
+  ADD COLUMN IF NOT EXISTS signed_at DATETIME NULL AFTER signature_path;

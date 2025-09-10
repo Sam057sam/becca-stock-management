@@ -1,0 +1,13 @@
+CREATE TABLE IF NOT EXISTS stock_adjustments (
+  id INT AUTO_INCREMENT PRIMARY KEY,
+  product_id INT NOT NULL,
+  from_location_id INT NULL,
+  to_location_id INT NULL,
+  quantity DECIMAL(14,3) NOT NULL,
+  reason VARCHAR(255) NULL,
+  created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+  FOREIGN KEY (product_id) REFERENCES products(id) ON DELETE CASCADE ON UPDATE CASCADE,
+  FOREIGN KEY (from_location_id) REFERENCES locations(id) ON DELETE SET NULL ON UPDATE CASCADE,
+  FOREIGN KEY (to_location_id) REFERENCES locations(id) ON DELETE SET NULL ON UPDATE CASCADE
+) ENGINE=InnoDB;
+

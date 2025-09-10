@@ -1,0 +1,3 @@
+ALTER TABLE products
+  ADD COLUMN IF NOT EXISTS image_path VARCHAR(255) NULL AFTER sell_price;
+
